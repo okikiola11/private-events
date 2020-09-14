@@ -1,0 +1,10 @@
+<div>Show all User event</div>
+
+<div class="row">
+  <div class="offset-4 col-md-4">
+    <h3 class="text-center"> Show A Single Event </h3>
+    <div class="">Creator</div> <%= @event.creator.name %>
+    
+    <%= link_to 'Attend Event', event_attending_path(@event), method: :post, confirm: 'really?' %>
+  </div>
+</div>

@@ -1,8 +1,18 @@
 <div class="text-center home">
-  <h2>This is a simple guide on how to create session based authentication system</h2>
-  <br/>
-  <p>
-    Please signup or login to test the app.
-  <p>
-  <%= link_to "Sign up", signup_path, class: "btn btn-primary" %>
+  <div class='mb-1 '> Welcome to the events page </div>
+  
+  <% @events.each do |event| %>
+    <div class='card'>
+      <div>
+        <%= event.title %> <br />
+        <%= event.description %>  <br>
+        <%= link_to 'Show', event_path(event), class:"card-link btn btn-primary" %>
+        <%= link_to 'Attend Event', event_attending_path, class:"card-link btn btn-primary" %><br /><br />
+      </div>
+
+      
+    </div>
+  <% end %>
+
+  <%= link_to 'Create a new event', new_event_path, class: "btn btn-primary" %>
 </div>

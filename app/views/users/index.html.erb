@@ -1,3 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h3>Users</h3>
+
+<% @users.each do |user| %>
+  <%= link_to 'Show', user %>
+<% end %><br>
+
+<%= link_to 'New User', new_user_path, class: 'mt-2 btn btn-primary' %>
